@@ -1,0 +1,144 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: white;
+    background-color: black !important;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #000000;
+    width: 250px;
+    height: 100%;
+    transition: .3s;
+    z-index: 1000;
+}
+
+ul {
+    list-style: none !important;
+    padding: 15px;
+    line-height: 3;
+}
+
+.sidebar ul li a {
+    color: #f9f6f6;
+    font: 500;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.navbar-btn {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background-color: #F8F6F6;
+    height: 100vh;
+    z-index: 1000;
+}
+
+.navbar-btn-click {
+    left: 250px;
+}
+
+.navbar-btn .sideBarBtn {
+    width: 50px;
+    height: 50px;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    top: 250px;
+    z-index: 1000;
+}
+
+.navbar-btn .sideBarBtn span {
+    width: 35px;
+    height: 3px;
+    margin-top: 10px;
+}
+
+.navbar-btn .sideBarBtn.toggle span:nth-child(2) {
+    visibility: hidden;
+}
+
+.navbar-btn .sideBarBtn.toggle2 span:first-child,
+.navbar-btn .sideBarBtn.toggle2 span:last-child {
+    transition: all .2s;
+}
+
+.navbar-btn .sideBarBtn.toggle2 span:first-child {
+    transform: rotate(45deg);
+    transition: all .2s;
+}
+
+.navbar-btn .sideBarBtn.toggle2 span:last-child {
+    transform: rotate(-45deg);
+    position: relative;
+    bottom: 25px;
+    transition: all .2s;
+}
+
+.icon-group2 {
+    position: relative;
+    top: 450px;
+}
+
+.icon-group1 {
+    top: 30px
+}
+
+.icon-group1 .icon:hover {
+    color: rgba(255, 0, 0, .7);
+    transition: all 1s;
+}
+
+.copyright {
+    top: 50px;
+    color: gray;
+}
+
+.full-data {
+    background-size: cover;
+    height: 500px;
+    overflow: hidden;
+}
+
+.form-control {
+    border: none !important;
+    border-bottom: 1px solid gray !important;
+}
+
+.data {
+    height: 100%;
+    padding-top: 150px;
+    background-color: rgba(128, 128, 128, .5);
+    top: 100%;
+    transition: all 1s;
+}
+
+.full-data:hover .data {
+    top: 0px;
+}
+
+.nav-link {
+    color: white !important;
+    ;
+}
+
+.nav-link:hover {
+    color: red !important;
+    transition: all .5s;
+}
+
+.error {
+    background-color: rgb(255, 255, 0)
+}
+
+.error {
+    font-size: 14px;
+}

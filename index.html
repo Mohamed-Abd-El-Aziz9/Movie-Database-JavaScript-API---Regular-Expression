@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--bootstrap links-->
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.bundle.js"></script>
+
+    <!--font awsome links-->
+    <link rel="stylesheet" href="css/all.min.css">
+    <script src="js/all.min.js"></script>
+
+
+    <!--font link-->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+
+    <!--fade up animation library link-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+
+</head>
+
+<body>
+    <!---Nav Bar-->
+    <nav>
+        <section id="sidebar" class="sidebar d-none">
+            <ul id="ul-section">
+                <li><a href="#" class="nav-link" id='now_playing'>Now playing</a></li>
+                <li><a href="#" class="nav-link" id='popular'>Popular</a></li>
+                <li><a href="#" class="nav-link" id='top_rated'>Top Rated</a></li>
+                <li><a href="#" class="nav-link" id='trending'>Trending</a></li>
+                <li><a href="#" class="nav-link" id='upcoming'> Upcoming</a></li>
+                <li><a href="#contact" class="nav-link">Contact Us</a></li>
+            </ul>
+            <div class="icon-group1 text-center fs-6 position-relative text-white">
+                <i class="icon fab fa-facebook p-2"></i>
+                <i class="icon fab fa-twitter p-2"></i>
+                <i class="icon fas fa-globe p-2"></i>
+            </div>
+            <p class="copyright position-relative text-center ">Copyright Â© 2019 All Rights Reserved.</p>
+        </section>
+
+        <div id="navbarbtn" class="navbar-btn text-center">
+            <div class="logo ">
+                <img src="images/logo.png" class="w-50 m-1" alt="">
+            </div>
+            <button id='sideBarBtn' class=" sideBarBtn text-black align-self-center">
+                <span class="bg-black text-black d-block "> </span>
+                <span class="bg-black text-black d-block"> </span>
+                <span class="bg-black text-black d-block"></span>
+            </button>
+
+            <div class="icon-group2 text-center fs-5">
+                <i class="fas fa-globe w-100"></i>
+                <i class="fas fa-share-alt"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!---Search Section-->
+
+    <section class="inputs container">
+        <div class="row mt-5 mb-5">
+            <div class="col-md-6">
+                <input onkeyup="search()" id="search1" type="text" class="form-control bg-transparent mb-5 text-white "
+                    placeholder="Get movie by word..." aria-label="Get movie by word...">
+
+            </div>
+            <div class="col-md-6">
+                <input type="text" onkeyup="search2()" id="search2" class="form-control bg-transparent text-white"
+                    placeholder="search" aria-label="search" aria-describedby="addon-wrapping">
+
+            </div>
+
+    </section>
+
+    <!---Main data that come from API Section-->
+
+    <section class="main-data">
+        <div class="container">
+            <div class="row flex-wrap" id="data-container"></div>
+        </div>
+    </section>
+
+    <!---Contact us  Section-->
+
+    <section id="contact" class="contact container mt-5 w-75 ">
+        <h2 class="text-white text-center">
+            Contact us
+        </h2>
+        <div class="row">
+            <div class="col-md-6" data-aos="fade-up">
+                <input type="text" onkeyup="validationFirstName()" id="firstName"
+                    class="form-control bg-transparent mb-2 text-white " placeholder="Enter Your First Name"
+                    aria-label="Get movie by word...">
+                <div class="error p-2 d-none rounded-3" id="error">
+                    <i class="fa-solid fa-triangle-exclamation text-danger "></i>
+                    <p class="text-danger d-inline">Please enter valid name with 3 letter at least and first character
+                        is capital</p>
+                </div>
+
+            </div>
+            <div class="col-md-6" data-aos="fade-up">
+                <input type="text" onkeyup="validationLastName()" id="lastName"
+                    class="form-control bg-transparent mb-2 text-white" placeholder="Enter Your Last Name"
+                    aria-label="search" aria-describedby="addon-wrapping">
+                <div class="error p-2 d-none  rounded-3" id="error2">
+                    <i class="fa-solid fa-triangle-exclamation text-danger "></i>
+                    <p class="text-danger d-inline">Please enter valid name with 3 letter at least and first character
+                        is capital</p>
+                </div>
+
+            </div>
+            <div class="col-md-6" data-aos="fade-up">
+                <input type="text" onkeyup=" validationphone()" id="phone"
+                    class="form-control bg-transparent mb-2 text-white" placeholder="Enter Your Phone Number"
+                    aria-label="search" aria-describedby="addon-wrapping">
+                <div class="error p-2 d-none rounded-3 " id="error3">
+                    <i class="fa-solid fa-triangle-exclamation text-danger "></i>
+                    <p class="text-danger d-inline">Please Enter Egyption Valid Number</p>
+                </div>
+
+            </div>
+
+            <div class="col-md-6" data-aos="fade-up">
+                <input type="text" id="age" onkeyup="validationage() "
+                    class="form-control bg-transparent mb-2 text-white" placeholder="Enter Your Age" aria-label="search"
+                    aria-describedby="addon-wrapping">
+                <div class="error p-2 d-none rounded-3 " id="error4">
+                    <i class="fa-solid fa-triangle-exclamation text-danger "></i>
+                    <p class="text-danger d-inline">Please enter Your Valid Age</p>
+                </div>
+
+            </div>
+            <div class="col-md-6 " data-aos="fade-up">
+                <input type="password" onkeyup="validationpassword()" id="password"
+                    class="form-control bg-transparent mb-2 text-white" placeholder="Enter Your Password"
+                    aria-label="search" aria-describedby="addon-wrapping">
+                <div class="error p-2 d-none  rounded-3" id="error5">
+                    <i class="fa-solid fa-triangle-exclamation text-danger "></i>
+                    <p class="text-danger d-inline">entre valid password Minimum eight characters, at least one letter
+                        and one number</p>
+                </div>
+            </div>
+            <div class="col-md-6  " data-aos="fade-up">
+                <input type="password" onkeyup="validationrepassword()" id="repassword"
+                    class="form-control bg-transparent mb-2 text-white" placeholder="Renter Your Password"
+                    aria-label="search" aria-describedby="addon-wrapping">
+                <div class=" matched d-none bg-success w-25 text-center rounded-pill " id="matched">
+                    <i class="fa-solid fa-check text-white"></i>
+                    <p class="text-white d-inline">Matched</p>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="m-5 ms-0">
+            <button type="button" class="btn btn-outline-success">Submit</button>
+
+        </div>
+    </section>
+
+
+    <script src="js/jquery-3.6.0.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
